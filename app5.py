@@ -111,7 +111,7 @@ uploaded_file = st.file_uploader("Upload an image 📸", type=["jpg", "jpeg", "p
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Load pre-trained model
-model = tf.keras.models.load_model("model/cat_dog_model.h5")
+model = tf.keras.models.load_model("cat_dog_model.h5")
 
 # Preprocessing function
 def preprocess(img):
