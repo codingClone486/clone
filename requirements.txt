@@ -1,3 +1,4 @@
 tensorflow
 streamlit
 h5py
+keras
