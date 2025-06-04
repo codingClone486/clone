@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Chooti Mamiji</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #FFDEE9, #B5FFFC); /* Soft happy colors */
+            color: #552586;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+            text-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f, 0 0 45px #ff007f;
+        }
+        #birthdayText {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 45px #ff00ff;
+            opacity: 0;
+        }
+        .sparkles {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff00ff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff00ff;
+            animation: sparkle 2s infinite;
+        }
+        @keyframes sparkle {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .floating-heart {
+            position: absolute;
+            color: #ff007f;
+            font-size: 2rem;
+            animation: floatHeart 3s infinite alternate ease-in-out;
+        }
+        @keyframes floatHeart {
+            0% { transform: translateY(10px); }
+            100% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body onload="generateText(); generateEffects();">
+    <div class="container">
+        <h1>🎉 Happy Birthday Chooti Mamiji 🎉</h1>
+        <p id="birthdayText"></p>
+        <p class="glow">Wishing you joy, happiness, and a wonderful year ahead!</p>
+    </div>
+
+    <script>
+        const message = "Happy Birthday Chooti Mamiji!";
+        let i = 0;
+        function generateText() {
+            if (i < message.length) {
+                document.getElementById("birthdayText").textContent += message.charAt(i);
+                document.getElementById("birthdayText").style.opacity = 1;
+                i++;
+                setTimeout(generateText, 150);
+            }
+        }
+
+        function generateEffects() {
+            for (let j = 0; j < 15; j++) {
+                let sparkle = document.createElement("div");
+                sparkle.classList.add("sparkles");
+                sparkle.style.top = Math.random() * window.innerHeight + "px";
+                sparkle.style.left = Math.random() * window.innerWidth + "px";
+                document.body.appendChild(sparkle);
+            }
+
+            for (let k = 0; k < 8; k++) {
+                let heart = document.createElement("div");
+                heart.classList.add("floating-heart");
+                heart.innerHTML = "❤️";
+                heart.style.top = Math.random() * window.innerHeight + "px";
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                document.body.appendChild(heart);
+            }
+        }
+    </script>
+</body>
+</html>

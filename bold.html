@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Cheers! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e); /* Dark cosmic background */
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f, 0 0 45px #ff007f;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff007f;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: pop 1s ease-out;
+        }
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5) translateY(-150px); opacity: 0; }
+        }
+    </style>
+</head>
+<body onload="triggerCelebration();">
+    <div class="container">
+        <h1>🎊 Let's Cheers! 🥳</h1>
+        <p>Get ready for an epic birthday celebration!</p>
+    </div>
+
+    <script>
+        function triggerCelebration() {
+            for (let j = 0; j < 30; j++) {
+                let confetti = document.createElement("div");
+                confetti.classList.add("confetti");
+                confetti.style.top = Math.random() * window.innerHeight + "px";
+                confetti.style.left = Math.random() * window.innerWidth + "px";
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                document.body.appendChild(confetti);
+            }
+
+            // Fix: Ensure smooth redirection after 5 seconds
+            setTimeout(() => {
+                window.location.href = "birthday.html"; // Redirects to the main birthday page
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
