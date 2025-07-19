@@ -1,4 +1,4 @@
-tensorflow
+tensorflow==2.13.0
 streamlit
 h5py
 keras
