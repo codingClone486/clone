@@ -2,7 +2,10 @@ services:
   - type: web
     name: streamlit-clone
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      rm -f poetry.lock pyproject.toml
+      pip install -r requirements.txt
     startCommand: streamlit run app10.py --server.port=$PORT --server.enableCORS=false
     runtime: python-3.10.13
+
 
