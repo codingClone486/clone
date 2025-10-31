@@ -1,6 +1,8 @@
-tensorflow-cpu==2.10.0
+streamlit==1.39.0
 keras==2.10.0
 h5py==3.8.0
-streamlit==1.39.0
+numpy
+
+
 
 
