@@ -1,7 +1,6 @@
+from keras.models import load_model
+from keras.applications.mobilenet_v2 import preprocess_input, decode_predictions
 import streamlit as st
-import tensorflow as tf
-from tensorflow.keras.applications import MobileNetV2
-from tensorflow.keras.applications.mobilenet_v2 import decode_predictions, preprocess_input
 from PIL import Image
 import numpy as np
 import time
@@ -153,3 +152,4 @@ st.markdown("""
         <p class="credits">All rights reserved | Powered by VisionaryAI | Designed and crafted by codingclone486</p>
     </div>
 """, unsafe_allow_html=True)
+
