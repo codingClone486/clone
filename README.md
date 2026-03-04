@@ -68,7 +68,3 @@ Golden Retriever (98.72%)
 Developed by codingclone486
 
 Passionate about building AI-powered applications and machine learning projects.
-
-⭐ Support
-
-If you like this project, consider giving it a ⭐ on GitHub!
